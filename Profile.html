@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="HandheldFriendly" content="true">
+  <title>Profile</title>
+  <link rel="icon" href="Profile.png">
+  <link rel="stylesheet" href="master.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body>
+
+<!--<div class="con"></div>-->
+<div class="i">
+<img src="" id="myVideo">
+</div>
+
+<div class="dark">
+  <label class="theme-switch" for="checkbox">
+    <input type="checkbox" id="checkbox" />
+      <div class="slider round"></div>
+  </label>
+</div>
+
+<div class="twitter">
+  <i class="bi bi-twitter fa-lg"></i>
+</div>
+<br>
+<div class="instagram">
+  <i class="bi bi-instagram fa-lg"></i>
+</div>
+<div class="linkedin">
+  <i class="bi bi-linkedin fa-lg"></i>
+</div>
+
+<blockquote class="blockquote text-center">
+  <nav>
+    <div class="nav__link">
+      <span class="nav__link--text" data-splitting>&#x3c;&#x2215;Profile&#x3e;</span>
+      <span class="nav__link--text" data-splitting>Welcome</span>
+    </div>
+  </nav>
+</blockquote>
+
+<div class="container text-center">
+  <div class="row gy-3 mt-3">
+    <div class="col-sm">
+      <div class="card w-100">
+        <div class="mx-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="white" class="bi bi-code-slash" viewBox="0 0 16 16">
+          <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
+        </svg>
+        </div>
+        <div class="card-body">
+          <a href="Projects.html" class="btn btn-primary">&#160;&#160;Projects&#160;&#160;</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card w-100">
+        <div class="mx-auto">
+        <img src="GitHub.png" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <a href="https://github.com/Praashoo7" class="btn btn-primary">&#160;&#160;GitHub&#160;&#160;</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card w-100">
+        <div class="mx-auto">
+        <img src="About.png" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <a href="About.html" class="btn btn-primary">&#160;&#160;About&#160;&#160;</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+        <div class="card w-100">
+          <div class="mx-auto">
+          <img src="Contact.png" class="card-img-top" alt="...">
+          </div>
+          <div class="card-body">
+            <a href="Contact.html" class="btn btn-primary">&#160;&#160;Contact&#160;&#160;</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="container text-center">
+  <div class="copyright">
+    <b>
+      <script>document.write(new Date().getFullYear());
+      </script> &copy; All Rights Reserved.
+    </b>
+  </div>
+</div>
+
+</body>
+</html>
+
+<style>
+
+.i img{
+  content: var(--bg-video);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myVideo {
+  z-index: -1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+/*body {
+  color: #fff;
+  background: linear-gradient(90deg, var(--bg-gredient1), var(--bg-gredient2), var(--bg-gredient3), var(--bg-gredient4));
+  background-size: 400% 400%;
+  -webkit-animation: gradientBG 7s ease infinite forwards;
+  animation: gradientBG 7s ease infinite forwards;
+}
+
+.con {
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  text-align: center;
+}
+
+@-webkit-keyframes gradientBG {
+  0% {
+    background-position: 0% 20%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}*/
+
+@font-face {
+    font-family: Caviar Dreams;
+    src: url("caviardreams.ttf");
+}
+           
+@font-face {
+    font-family: Caviar Dreams;
+    src: url("caviardreams_bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: N27;
+    src: url("N27-Regular.otf");
+}
+           
+@font-face {
+    font-family: N27I;
+    src: url("N27-RegularItalic.otf");
+    font-weight: bold;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #000000; 
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(180, 180, 180); 
+}
+
+.twitter{
+  font-size: 20px;
+  transition: .4s;
+  margin-right: 15px;
+  margin-top: 10px;
+  float: right;
+  color: var(--icon-color);
+}
+
+.twitter:hover{
+  color: red;
+  cursor: pointer;
+}
+
+.instagram{
+  font-size: 20px;
+  transition: .4s;
+  float: right;
+  margin-right: -20px;
+  margin-top: 20px;
+  color: var(--icon-color);
+}
+
+.instagram:hover{
+  color: red;
+  cursor: pointer;
+}
+
+.linkedin{
+  font-size: 20px;
+  transition: .4s;
+  float: right;
+  margin-right: -20px;
+  margin-top: 55px;
+  color: var(--icon-color);
+}
+
+.linkedin:hover{
+  color: red;
+  cursor: pointer;
+}
+
+.blockquote {
+    margin-top: 120px;
+    margin-bottom: 80px;
+}
+
+.card{
+  clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: var(--card-color);
+  z-index: 1;
+  width: 300px;
+  height: 300px;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  animation-name: card;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin: 2px
+}
+
+.card:active {
+  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
+  transform: translateY(2px);
+}
+
+@keyframes card {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 15px); }
+  to   { transform: translate(0, -0px); }    
+}
+
+.bi-code-slash{
+  display: block;
+  max-width: 96px;
+  height: 96px;
+  margin-top: 60px;
+}
+
+img {
+  display: block;
+  max-width: 96px;
+  height: 96px;
+  margin-top: 60px;
+}
+
+.btn-primary{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-family: Caviar Dreams;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    display: inline-block;
+    border: none;
+    text-decoration: none;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    transition: .4s;
+}
+
+.btn-primary::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: none;
+    border-left: solid 21px var(--card-color);
+    border-bottom: solid 44px transparent;
+    z-index: 1;
+    transition: .4s;
+}
+
+.btn-primary::after{
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: none;
+    border-left: solid 21px transparent;
+    border-bottom: solid 44px var(--card-color);
+    z-index: 1;
+    transition: .4s;
+}
+
+.btn-primary:hover:before, .btn-primary:hover:after{
+    border-left-width: 25px;
+}
+
+.btn-primary:hover{
+    background: red;
+}
+
+.copyright{
+  margin-top: 60px;
+  font-family: Caviar Dreams;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 60px;
+  color: var(--profile-color);
+}
+
+b {
+  background: linear-gradient(0deg, var(--profile-color), var(--profile-color)) no-repeat right bottom / 0 var(--bg-h);
+  transition: background-size 150ms;
+  --bg-h: 10%;
+}
+b:where(:hover, :focus-visible) {
+  background-size: 100% var(--bg-h);
+  background-position-x: left;
+}
+
+.underline {
+  padding-bottom: 2px;
+  --bg-h: 2px;
+}
+
+b {
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+}
+
+</style>
+
+<!---------------------------------------------------------------------- DARK_MODE_TOGGLE_START ---------------------------------------------------------------------->
+
+<script>
+
+  const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+  function switchTheme(e) {
+      if (e.target.checked) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+      }
+      else {
+          document.documentElement.setAttribute('data-theme', 'light');
+      }    
+  }
+  
+  toggleSwitch.addEventListener('change', switchTheme, false);
+  // store user preference for future visits
+  function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+    }    
+  }
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+  
+  if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+  
+      if (currentTheme === 'dark') {
+          toggleSwitch.checked = true;
+      }
+  }
+  
+  </script>
+
+
+<style>
+:root {
+  /* Start of dark/light mode css3 variables for website */
+  --bg-color: white;
+  --bg-gredient1:#ffffff;
+  --bg-gredient2:#d5d5d5;
+  --bg-gredient3:#e7e5e4;
+  --bg-gredient4:#7c7c7c;
+  --bg-video:url(WavyDot_Light.gif);
+  --icon-color:black;
+  --profile-color:black;
+  --profile-bg:black;
+  --profile-shadow:rgba(255,255,255,0.77);
+  --card-color:black;
+}
+/* dark mode css variables */
+[data-theme="dark"] {
+  --bg-color: #000000;
+  --bg-gredient1:#323232;
+  --bg-gredient2:#424242;
+  --bg-gredient3:#525252;
+  --bg-gredient4:#626262;
+  --bg-video:url(WavyDot_Dark.gif);
+  --icon-color:white;
+  --profile-color:white;
+  --profile-bg:#999999;
+  --profile-shadow:black;
+  --card-color:#171717;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+  }
+
+/* css to style it like a toggle switch*/
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center; 
+
+ }
+.theme-switch {
+  display: inline-block;
+  height: 50px;
+  position: absolute;
+  margin-left: 12px;
+  margin-top: 15px;
+  width: 24px;
+}
+
+.theme-switch input {
+  display:none;
+}
+.slider {
+  background-color: rgb(0, 0, 0);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: rgb(255, 255, 255);
+  top: 4px;
+  content: "";
+  height: 16px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 16px;
+}
+
+input:checked + .slider {
+  background-color: white;
+}
+
+input:checked + .slider:before {
+  transform: translateY(26px);
+  background-color: rgb(0, 0, 0);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+</style>
+
+<!---------------------------------------------------------------------- DARK_MODE_TOGGLE_END ---------------------------------------------------------------------->
+
+<style>
+
+.nav__link {
+  letter-spacing: 2vw;
+  color: var(--profile-color);
+  display: grid;
+}
+.nav__link--text {
+  grid-area: 1/1;
+  transition: opacity 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95), transform 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.nav__link--text .word {
+  white-space: nowrap;
+}
+.nav__link--text .char {
+  display: inline-block;
+  transform-origin: 50% 50% 0.4em;
+  transition: transform 0.5s cubic-bezier(0.5, 0, 0, 1);
+  transition-delay: calc(0ms + var(--char-index) * 25ms);
+  backface-visibility: hidden;
+  margin: 0 -0.02em;
+}
+.nav__link--text:nth-child(1) {
+  font-family: "N27";
+  font-size: 6vw;
+  text-transform: uppercase;
+}
+
+.nav__link--text:nth-child(2) {
+  font-family: "caviar Dreams";
+  text-transform: uppercase;
+  font-size: 7vw;
+  font-weight: bold;
+  color: var(--profile-color);
+  opacity: 0;
+}
+.nav__link--text:nth-child(2) .char {
+  transform: rotate3d(1, -0.5, 0, 90deg);
+}
+.nav__link:hover .nav__link--text {
+  transform: translateX(var(--link-translate-x));
+}
+.nav__link:hover .nav__link--text:nth-child(1) {
+  opacity: 0;
+}
+.nav__link:hover .nav__link--text:nth-child(1) .char {
+  transform: rotate3d(1, 0.3, 0, -90deg);
+}
+.nav__link:hover .nav__link--text:nth-child(2) {
+  opacity: 1;
+}
+.nav__link:hover .nav__link--text:nth-child(2) .char {
+  transform: rotate3d(0, 0, 0, 90deg);
+}
+
+</style>
+
+<script>
+
+  console.clear();
+  
+  Splitting();
+  
+</script>
