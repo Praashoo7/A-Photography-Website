@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="master.css">
 </head>
 <body>
+    
+      <div class="i">
+    <img src="WavyDot_Light.gif" id="myVideo1">
+    </div>
+
+    <div class="i">
+      <img src="WavyDot_Dark.gif" id="myVideo2">
+      </div>
+    
     <div class="dark">
         <label class="theme-switch" for="checkbox">
           <input type="checkbox" id="checkbox" />
@@ -21,6 +30,20 @@
         <div class="progress">
         </div>
     </div>
+    <script>
+
+      var video1 = document.getElementById("myVideo1");
+      var video2 = document.getElementById("myVideo2");
+      var before_loadtime = new Date().getTime();
+      
+      if ( video1.readyState === 4 && video2.readyState === 4 ) {
+        var aftr_loadtime = new Date().getTime();  
+        // Time calculating in seconds  
+        pgloadtime = (aftr_loadtime - before_loadtime) / 1000  
+        document.getElementById("myDIV").style.animationDuration = pgloadtime;
+      }
+      
+      </script>
 </body>
 </html>
 
@@ -30,6 +53,10 @@ body{
     background-color: var(--bg-color);
 }
 
+.i img{
+  display: none;
+}
+    
 .progress-loader {
   top: 50%;
   left: 50%;
