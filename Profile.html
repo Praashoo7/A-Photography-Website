@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
   <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
-  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 </head>
 <body>
 
@@ -50,6 +49,7 @@
 <div class="container text-center">
   <div class="row gy-3 mt-3">
     <div class="col-sm">
+      <!--onclick="window.location.href='Projects.html';" style="cursor: pointer;"-->
       <div class="card w-100">
         <div class="mx-auto">
         <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="white" class="bi bi-code-slash" viewBox="0 0 16 16">
@@ -195,12 +195,12 @@
 }
  
 ::-webkit-scrollbar-thumb {
-  background: #000000; 
+  background: var(--top-scrollbar-color); 
   border-radius: 25px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(180, 180, 180); 
+  background: var(--top-scrollbar-hover); 
 }
 
 .twitter{
@@ -429,6 +429,8 @@ b {
   --profile-bg:black;
   --profile-shadow:rgba(255,255,255,0.77);
   --card-color:black;
+  --top-scrollbar-color:black;
+  --top-scrollbar-hover:#454545;
 }
 /* dark mode css variables */
 [data-theme="dark"] {
@@ -443,6 +445,8 @@ b {
   --profile-bg:#999999;
   --profile-shadow:black;
   --card-color:#171717;
+  --top-scrollbar-color: #2e2e2e;
+  --top-scrollbar-hover:#5c5a5a;
 }
 
 body {
