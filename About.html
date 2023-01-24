@@ -115,12 +115,12 @@
 }
  
 ::-webkit-scrollbar-thumb {
-  background: #000000; 
+  background: var(--top-scrollbar-color); 
   border-radius: 25px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(180, 180, 180); 
+  background: var(--top-scrollbar-hover); 
 }
 
 img {
@@ -310,6 +310,8 @@ a {
   --about-info1:red;
   --bg-video:url(WavyDot_Light.gif);
   --gif: url(About_Light.gif);
+  --top-scrollbar-color:black;
+  --top-scrollbar-hover:#454545;
 }
 /* dark mode css variables */
 [data-theme="dark"] {
@@ -323,6 +325,8 @@ a {
   --about-info1:grey;
   --bg-video:url(WavyDot_Dark.gif);
   --gif: url(About_Dark.gif);
+  --top-scrollbar-color: #2e2e2e;
+  --top-scrollbar-hover:#5c5a5a;
 }
 
 body {
