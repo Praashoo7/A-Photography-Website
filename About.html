@@ -32,8 +32,8 @@
                 possible user experience.
                 
                 I Like to be a problem solver,<br> Paying high attention
-                to detail. Fan of Cinema, <a class="style3" data-link="Writing" href="#">Writing</a>, Tech,
-                <a class="style3" data-link="Photography" href="#">Photography</a>, TV Shows.
+                to detail. Fan of <a class="line-through" target="_blank" data-link="Cinema" href="#">Cinema</a>, <a class="line-through" data-link="Writing" target="_blank" href="#">Writing</a>, Tech,
+                <a class="line-through" data-link="Photography" target="_blank" href="#">Photography</a>, TV Shows.
                 <br><br>
                 Interested in Creating Things.
                 <br><br>
@@ -184,6 +184,10 @@ a {
   line-height: 1;
 }
 
+a:hover{
+  color: var(--title-background);
+}
+
 .style3 {
   position: relative;
   display: inline-block;
@@ -207,6 +211,28 @@ a {
 
 .style3:hover:after {
   top:0;
+}
+
+.line-through {
+  position: relative;
+}
+
+.line-through::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  margin-top:3px;
+  border-radius:10px;
+  left: 0;
+  top: calc(50% - 8px/2);
+  background-color: red;
+  transition: 300ms ease-in-out;
+  pointer-events: none;
+}
+
+.line-through:hover::after {
+  width: 100%;
 }
 
 .btn-primary {
