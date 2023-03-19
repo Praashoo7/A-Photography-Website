@@ -13,7 +13,7 @@
   <script src='https://unpkg.com/splitting/dist/splitting.min.js'></script>
 </head>
 <body>
-  
+
 <!--<div class="con"></div>-->
 <div class="i">
 <img src="" id="myVideo">
@@ -31,12 +31,14 @@
   <i class="bi bi-twitter fa-lg"></i>
 </div>
 </a>
+
 <br>
 <a href="https://www.instagram.com/_prash_777/" target="_blank">
 <div class="instagram">
   <i class="bi bi-instagram fa-lg"></i>
 </div>
 </a>
+
 <a href="http://linkedin.com/in/prashant-patil-ba301422b" target="_blank">
 <div class="linkedin">
   <i class="bi bi-linkedin fa-lg"></i>
@@ -56,7 +58,7 @@
   <div class="row gy-3 mt-3">
     <div class="col-sm">
       <!--onclick="window.location.href='Projects.html';" style="cursor: pointer;"-->
-      <div class="card w-100">
+      <div class="card w-100" onclick="window.location.href='Projects.html';" style="cursor: pointer;">
         <div class="mx-auto">
         <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="white" class="bi bi-code-slash" viewBox="0 0 16 16">
           <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
@@ -68,7 +70,7 @@
       </div>
     </div>
     <div class="col-sm">
-      <div class="card w-100">
+      <div class="card w-100" onclick="window.open('https://github.com/Praashoo7')" style="cursor: pointer;">
         <div class="mx-auto">
         <img src="GitHub.png" class="card-img-top" alt="...">
         </div>
@@ -78,7 +80,7 @@
       </div>
     </div>
     <div class="col-sm">
-      <div class="card w-100">
+      <div class="card w-100" onclick="window.location.href='About.html';" style="cursor: pointer;">
         <div class="mx-auto">
         <img src="About.png" class="card-img-top" alt="...">
         </div>
@@ -88,7 +90,7 @@
       </div>
     </div>
     <div class="col-sm">
-        <div class="card w-100">
+        <div class="card w-100" onclick="window.location.href='Contact.html';" style="cursor: pointer;">
           <div class="mx-auto">
           <img src="Contact.png" class="card-img-top" alt="...">
           </div>
@@ -270,12 +272,12 @@
   animation-duration: 3s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  margin: 2px
+  margin: 2px;
+  transition: .2s ease-in-out;
 }
 
 .card:active {
-  box-shadow: inset 0 0 2px rgba(128, 128, 128, 0.1);
-  transform: translateY(2px);
+  top: 2px;
 }
 
 @keyframes card {
