@@ -60,12 +60,12 @@
       <!--onclick="window.location.href='Projects.html';" style="cursor: pointer;"-->
       <div class="card w-100" onclick="window.location.href='Projects.html';" style="cursor: pointer;">
         <div class="mx-auto">
-        <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="white" class="bi bi-code-slash" viewBox="0 0 16 16">
+        <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" class="bi bi-code-slash" viewBox="0 0 16 16">
           <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/>
         </svg>
         </div>
         <div class="card-body">
-          <a href="Projects.html" class="btn btn-primary">&#160;&#160;Projects&#160;&#160;</a>
+          <a href="Projects.html" class="btn btn-primary"><span class="card_t">&#160;&#160;Projects&#160;&#160;</span></a>
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@
         <img src="GitHub.png" class="card-img-top" alt="...">
         </div>
         <div class="card-body">
-          <a href="https://github.com/Praashoo7" target="_blank" class="btn btn-primary">&#160;&#160;GitHub&#160;&#160;</a>
+          <a href="https://github.com/Praashoo7" target="_blank" class="btn btn-primary"><span class="card_t">&#160;&#160;GitHub&#160;&#160;</span></a>
         </div>
       </div>
     </div>
@@ -85,7 +85,7 @@
         <img src="About.png" class="card-img-top" alt="...">
         </div>
         <div class="card-body">
-          <a href="About.html" class="btn btn-primary">&#160;&#160;About&#160;&#160;</a>
+          <a href="About.html" class="btn btn-primary"><span class="card_t">&#160;&#160;About&#160;&#160;</span></a>
         </div>
       </div>
     </div>
@@ -95,7 +95,7 @@
           <img src="Contact.png" class="card-img-top" alt="...">
           </div>
           <div class="card-body">
-            <a href="Contact.html" class="btn btn-primary">&#160;&#160;Contact&#160;&#160;</a>
+            <a href="Contact.html" class="btn btn-primary"><span class="card_t">&#160;&#160;Contact&#160;&#160;</span></a>
           </div>
         </div>
       </div>
@@ -171,6 +171,10 @@
     background-position: 0% 50%;
   }
 }*/
+
+svg{
+  fill: white;
+}
 
 @font-face {
     font-family: Caviar Dreams;
@@ -276,6 +280,11 @@
   transition: .2s ease-in-out;
 }
 
+.card:hover{
+  scale: 1.05;
+}
+
+
 .card:active {
   top: 2px;
 }
@@ -300,51 +309,24 @@ img {
   margin-top: 60px;
 }
 
+.card_t {
+  display: inline-block;
+  transform: skew(30deg);
+}
+
 .btn-primary{
     margin-top: 20px;
     margin-bottom: 50px;
     font-family: Caviar Dreams;
     font-weight: bold;
     font-size: 20px;
-    position: relative;
-    display: inline-block;
-    border: none;
-    text-decoration: none;
     background: transparent;
-    color: rgb(255, 255, 255);
-    transition: .4s;
-}
-
-.btn-primary::before{
-    position: absolute;
-    content: '';
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
     border: none;
-    border-left: solid 21px var(--card-color);
-    border-bottom: solid 44px transparent;
-    z-index: 1;
+    border-radius: 0px;
+    display: inline-block;
+    cursor: pointer;
+    transform: skew(-30deg);
     transition: .4s;
-}
-
-.btn-primary::after{
-    position: absolute;
-    content: '';
-    right: 0;
-    top: 0;
-    width: 0;
-    height: 0;
-    border: none;
-    border-left: solid 21px transparent;
-    border-bottom: solid 44px var(--card-color);
-    z-index: 1;
-    transition: .4s;
-}
-
-.btn-primary:hover:before, .btn-primary:hover:after{
-    border-left-width: 25px;
 }
 
 .btn-primary:hover{
