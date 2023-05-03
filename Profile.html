@@ -19,31 +19,69 @@
 <img src="" id="myVideo">
 </div>
 
-<div class="dark">
-  <label class="theme-switch" for="checkbox">
-    <input type="checkbox" id="checkbox" />
-      <div class="slider round"></div>
-  </label>
+<div class="tpd">
+  <div class="dark">
+    <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+    </label>
+  </div>
+
+  <a href="https://twitter.com/praashhaant" target="_blank">
+  <div class="twitter">
+    <i class="bi bi-twitter fa-lg"></i>
+  </div>
+  </a>
+
+  <br>
+  <a href="https://www.instagram.com/_prash_777/" target="_blank">
+  <div class="instagram">
+    <i class="bi bi-instagram fa-lg"></i>
+  </div>
+  </a>
+
+  <a href="http://linkedin.com/in/prashant-patil-ba301422b" target="_blank">
+  <div class="linkedin">
+    <i class="bi bi-linkedin fa-lg"></i>
+  </div>
+  </a>
 </div>
 
-<a href="https://twitter.com/praashhaant" target="_blank">
-<div class="twitter">
-  <i class="bi bi-twitter fa-lg"></i>
+<div class="tbds">
+  <nav class="navbar">
+    <ul class="nav-menu">
+        <li class="nav-item" style="margin-top: 10px;">
+        <div class="dark">
+          <label class="theme-switch1" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+              <div class="slider1 round1"><span id="namee"></span>
+              </div>
+          </label>
+        </div>
+        </li>
+        <li class="nav-item" style="margin-top: 5px;">
+        <a href="https://twitter.com/praashhaant" style="text-decoration: none;" target="_blank">
+          <span class="card_t1">Twitter</span>
+        </a>
+        </li>
+        <li class="nav-item" style="margin-top: 5px;">
+        <a href="https://www.instagram.com/_prash_777/" style="text-decoration: none;" target="_blank">
+          <span class="card_t1">Instagram</span>
+        </a>
+        </li>
+        <li class="nav-item" style="margin-top: 5px; margin-bottom: 15px;">
+        <a href="http://linkedin.com/in/prashant-patil-ba301422b" style="text-decoration: none;" target="_blank">
+          <span class="card_t1">LinkedIn</span>
+        </a>
+        </li>
+    </ul>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
 </div>
-</a>
-
-<br>
-<a href="https://www.instagram.com/_prash_777/" target="_blank">
-<div class="instagram">
-  <i class="bi bi-instagram fa-lg"></i>
-</div>
-</a>
-
-<a href="http://linkedin.com/in/prashant-patil-ba301422b" target="_blank">
-<div class="linkedin">
-  <i class="bi bi-linkedin fa-lg"></i>
-</div>
-</a>
 
 <blockquote class="blockquote text-center">
   <nav>
@@ -314,6 +352,7 @@ img {
   padding-left: 0.5em;
   padding-right: 0.5em;
   transform: skew(30deg);
+  font-weight: bold;
 }
 
 .btn-primary{
@@ -330,7 +369,6 @@ img {
     transform: skew(-30deg);
     transition: .4s;
 }
-
 .btn-primary:hover{
     background: red;
 }
@@ -365,7 +403,206 @@ b {
   line-height: 1;
 }
 
+.tpd{
+  display: block;
+}
+
+.hamburger{
+  margin: 1em;
+  display: none;
+}
+
+.hamburger .navbar{
+  display: none;
+}
+
+input[type = "checkbox"] {
+  -webkit-appearance: none;
+  display: none;
+  visibility: hidden;
+}
+
+.bar {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+}
+
+.bar span {
+  position: absolute;
+  width: 25px;
+  height: 3.5px;
+  background: #f1faee;
+  border-radius: 50px;
+  display: inline-block;
+  transition: 0.3s ease;
+  left: 0;
+}
+
+.bar span.top {
+  top: 0;
+}
+
+.bar span.middle {
+  top: 8.5px;
+}
+
+.bar span.bottom {
+  bottom: 0;
+}
+
+input[type]:checked ~ span.top {
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 28px;
+  left: 2.5px;
+}
+
+input[type]:checked ~ span.bottom {
+  transform: rotate(-45deg);
+  transform-origin: top left;
+  width: 24px;
+  bottom: -1px;
+  box-shadow: 0 0 10px #495057;
+}
+
+input[type]:checked ~ span.middle {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+.tbds{
+  display: none;
+}
+
+.card_t1 {
+  font-family: Caviar Dreams;
+  font-size: 1.2em;
+  color: var(--icon-color);
+  font-weight: bold;
+  transition: .4s ease-in-out;
+}
+.card_t1:hover{
+  color: red;
+  cursor: pointer;
+}
+
+@media(max-width:768px){
+  .tbds{
+    display: block;
+  }
+  .tbds .navbar{
+    display: block;
+  }
+  .tpd{
+    display: none;
+  }
+  .hamburger{
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .blockquote {
+    margin-top: 80px;
+  }
+  body.blur {
+  backdrop-filter: blur(5px);
+  }
+  body.blur > *:not(.tbds) {
+    filter: blur(5px);
+  }
+}
+
+li{
+  list-style: none;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger{
+  width: 30px;
+  display: block;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.bar{
+  display: block;
+  width: 25px;
+  clip-path: polygon(5px 0%, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0% 5px);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all .4s ease-in-out;
+  background-color: var(--icon-color);
+}
+.hamburger:hover .bar{
+  background-color: red;
+}
+
+.nav-menu{
+  position: fixed;
+  left: -100%;
+  padding: 1em;
+  gap: 0;
+  top: 70px;
+  z-index: 3;
+  flex-direction: column;
+  border-radius: 15px;
+  background: var(--ham);
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  transition: .4s;
+}
+
+.nav-menu.active{
+  left: 0;
+}
+
 </style>
+
+<script>
+
+const body = document.querySelector("body");
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+  body.classList.toggle("blur");
+})
+
+document.querySelectorAll(".nav-link1").forEach(n => n.addEventListener("click",() =>{
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}))
+
+</script>
 
 <!---------------------------------------------------------------------- DARK_MODE_TOGGLE_START ---------------------------------------------------------------------->
 
@@ -387,10 +624,12 @@ b {
   function switchTheme(e) {
     if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
+        document.getElementById("namee").innerHTML="Light Mode";
         localStorage.setItem('theme', 'dark'); //add this
     }
     else {
         document.documentElement.setAttribute('data-theme', 'light');
+        document.getElementById("namee").innerHTML="Dark Mode";
         localStorage.setItem('theme', 'light'); //add this
     }    
   }
@@ -401,6 +640,11 @@ b {
   
       if (currentTheme === 'dark') {
           toggleSwitch.checked = true;
+          document.getElementById("namee").innerHTML="Light Mode";
+      }
+      else if (currentTheme === 'light') {
+          toggleSwitch.checked = true;
+          document.getElementById("namee").innerHTML="Dark Mode";
       }
   }
   
@@ -423,6 +667,7 @@ b {
   --card-color:black;
   --top-scrollbar-color:black;
   --top-scrollbar-hover:#454545;
+  --ham:rgb(243, 242, 242);
 }
 /* dark mode css variables */
 [data-theme="dark"] {
@@ -439,6 +684,7 @@ b {
   --card-color:#171717;
   --top-scrollbar-color: #2e2e2e;
   --top-scrollbar-hover:#5c5a5a;
+  --ham:#171717;
 }
 
 body {
@@ -492,7 +738,7 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateY(26px);
-  background-color: rgb(0, 0, 0);
+  background-color: black;
 }
 
 .slider.round {
@@ -501,6 +747,35 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+
+@media(max-width:768px){
+
+  .theme-switch1 {
+    position: relative;
+    width: 120px;
+  }
+
+  .theme-switch1 input {
+    display:none;
+  }
+  .slider1 {
+    cursor: pointer;
+    position: relative;
+  }
+
+  #namee{
+    color: var(--icon-color);
+    font-family: Caviar Dreams;
+    font-weight: bold;
+    font-size: 1.15em;
+    transition: .4s ease-in-out;
+  }
+  #namee:hover{
+    cursor: pointer;
+    color: red;
+  }
 }
 
 </style>
