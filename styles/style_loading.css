@@ -81,14 +81,14 @@ transform: translateX(90%);
 
 :root {
   /* Start of dark/light mode css3 variables for website */
-  --bg-color: white;
+  --bg-color: rgb(240, 240, 240);
   --load:black;
   --text-color:black;
   --bg-load:rgba(0, 0, 0, 0.253);
 }
 /* dark mode css variables */
 [data-theme="dark"] {
-  --bg-color: #000000;
+  --bg-color: #171717;
   --load:white;
   --text-color:white;
   --bg-load:rgba(255, 255, 255, 0.253);
