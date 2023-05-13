@@ -34,7 +34,13 @@
 
 @font-face {
   font-family: Caviar Dreams;
+  src: url("fonts/caviardreams.ttf");
+}
+         
+@font-face {
+  font-family: Caviar Dreams;
   src: url("fonts/caviardreams_bold.ttf");
+  font-weight: bold;
 }
 
 ::-webkit-scrollbar {
