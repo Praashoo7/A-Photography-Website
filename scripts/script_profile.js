@@ -3,17 +3,34 @@
 const body = document.querySelector("body");
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
+const clickableElements = document.querySelectorAll('.container');
 
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
   body.classList.toggle("blur");
-})
+  
+  if (body.classList.contains('disable-scroll')) {
+    body.classList.remove('disable-scroll');
+    clickableElements.forEach(function(element) {
+      element.classList.remove('disable-clicks');
+    });
+  } else {
+    body.classList.add('disable-scroll');
+    clickableElements.forEach(function(element) {
+      element.classList.add('disable-clicks');
+    });
+  }
+});
 
-document.querySelectorAll(".nav-link1").forEach(n => n.addEventListener("click",() =>{
+document.querySelectorAll(".nav-link1").forEach(n => n.addEventListener("click", () => {
   hamburger.classList.remove("active");
   navMenu.classList.remove("active");
-}))
+  body.classList.remove('disable-scroll');
+  clickableElements.forEach(function(element) {
+    element.classList.remove('disable-clicks');
+  });
+}));
 
 /*---------------------------------------------------------------------- THEME_SWITCH_START ----------------------------------------------------------------------*/
 

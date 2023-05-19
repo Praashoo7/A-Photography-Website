@@ -16,6 +16,17 @@
     object-fit: cover;
   }
   
+  body.disable-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+  .disable-clicks {
+    pointer-events: none;
+  }
+
   /*body {
     color: #fff;
     background: linear-gradient(90deg, var(--bg-gredient1), var(--bg-gredient2), var(--bg-gredient3), var(--bg-gredient4));
