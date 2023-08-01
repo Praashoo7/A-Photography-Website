@@ -1,0 +1,277 @@
+.i img{
+  content: var(--bg-video);
+}
+
+#p1{
+  font-weight: bold;
+  font-family: Caviar Dreams;
+  margin-bottom: 30px;
+  transition: .4s ease;
+  color: var(--text-color);
+}
+
+#p2{
+  font-weight: bold;
+  font-family: Caviar Dreams;
+  margin-bottom: 30px;
+  transition: .4s ease;
+  color: var(--text-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#myVideo {
+  z-index: -1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+@font-face {
+  font-family: Caviar Dreams;
+  src: url("fonts/caviardreams.ttf");
+}
+         
+@font-face {
+  font-family: Caviar Dreams;
+  src: url("fonts/caviardreams_bold.ttf");
+  font-weight: bold;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--top-scrollbar-color); 
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--top-scrollbar-hover); 
+}
+
+img {
+    content:var(--gif);
+    margin-top: -30px;
+    max-width: 100%;
+    height: auto;
+}
+
+.card{
+  border: none;
+  background-color:transparent;
+}
+
+.card-title{
+  font-family: Caviar Dreams;
+  font-weight: bold;
+  font-size: 50px;
+  color: var(--title-background);
+  transform: skewY(-4deg);
+  text-shadow: var(--text-shadow1) 0.1em 0.1em,var(--text-shadow2) 0.2em 0.2em,var(--text-shadow3) 0.3em 0.3em;
+}
+
+.card-text{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+  background-color: var(--card-background);
+	text-align: center;
+  box-shadow: var(--card-shadow1) 0px 2px 5px -1px, var(--card-shadow2) 0px 1px 3px -1px;
+  clip-path: polygon(40px 0%, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%, 0% 40px);
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.card-wrap {
+  filter: drop-shadow(-1px 2px 2px rgba(50, 50, 93, 0.25));
+}
+
+.input-box{
+  font-family: Caviar Dreams;
+  font-weight: bold;
+  margin: 27px;
+  width: auto;
+	box-shadow: inset 2px 5px 10px var(--box-shadow);
+	border-radius: 25px;
+  color: var(--text-color)
+}
+
+.card-text form .input-box input{
+	border: none;
+	outline: none;
+	background: transparent;
+	width: 100%;
+	padding: 10px 15px;
+}
+
+#name{
+  color: var(--text-color); 
+}
+
+#email{
+  color: var(--text-color);
+}
+
+#message{
+  padding: 10px 15px;
+	outline: none;
+  border: none;
+  border-radius: 25px;
+  font-family: Caviar Dreams;
+  font-weight: bold;
+  box-shadow: inset 2px 5px 10px var(--box-shadow);
+  background-color: var(--card-background);
+  color: var(--text-color)
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.8rem 0.8rem;
+  border-radius: 10rem; 
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-family: Arial;
+  font-size: 1.1rem;
+  letter-spacing: 0.15rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  font-family: Caviar Dreams;
+  font-weight: bold;
+  border: none;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: red;
+  z-index: -1;
+  border-radius: 10rem;
+  transition: 0.3s ease all;
+  transform: scale(0, 1);
+  transform-origin: top right;
+  transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1);
+  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.btn-primary:hover {
+  color: #ffffff;
+  background-color: black;
+}
+
+.btn-primary:hover::after {
+  transform: scale(1, 1);
+  transform-origin: top left;
+}
+
+/*<!---------------------------------------------------------------------- THEME_SWITCH ---------------------------------------------------------------------->*/
+
+:root {
+  /* Start of dark/light mode css3 variables for website */
+  --bg-color: white;
+  --title-background:black;
+  --text-color:black;
+  --card-background:rgb(255, 255, 255);
+  --text-shadow1:#aaaaaa;
+  --text-shadow2:#cccccc;
+  --text-shadow3:#eeeeee;
+  --card-shadow1:rgba(50, 50, 93, 0.25);
+  --card-shadow2:rgba(0, 0, 0, 0.3);
+  --box-shadow:rgba(0,0,0,0.1);
+  --bg-video:url(WavyDot_Light.gif);
+  --gif: url(Contact_Light.gif);
+  --top-scrollbar-color:black;
+  --top-scrollbar-hover:#454545;
+}
+/* dark mode css variables */
+[data-theme="dark"] {
+  --bg-color: black;
+  --title-background:white;
+  --text-color: white;
+  --card-background:#171717;
+  --text-shadow1:#242424;
+  --text-shadow2:#141414;
+  --text-shadow3:#0f0f0f;
+  --card-shadow1:rgba(255, 255, 255, 0.25);
+  --card-shadow2:rgba(255, 255, 255, 0.3);
+  --box-shadow:rgb(15, 15, 15);
+  --bg-video:url(WavyDot_Dark.gif);
+  --gif: url(Contact_Dark.gif);
+  --top-scrollbar-color: #2e2e2e;
+  --top-scrollbar-hover:#5c5a5a;
+}
+
+body {
+    background-color: var(--bg-color);
+  }
+
+/* css to style it like a toggle switch*/
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center; 
+
+ }
+.theme-switch {
+  display: none;
+}
+
+.theme-switch input {
+  display:none;
+}
+.slider {
+  background-color: rgb(0, 0, 0);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: rgb(255, 255, 255);
+  top: 4px;
+  content: "";
+  height: 16px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 16px;
+}
+
+input:checked + .slider {
+  background-color: rgb(255, 0, 0);
+}
+
+input:checked + .slider:before {
+  transform: translateY(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
