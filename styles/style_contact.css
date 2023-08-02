@@ -1,0 +1,275 @@
+/*-- BODY --*/
+
+body {
+  background: var(--title-background);
+  background-image: radial-gradient(var(--title-background) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+/*-- FONT --*/
+
+@font-face {
+  font-family: N27;
+  src: url("fonts/N27-Regular.otf");
+}
+
+/* -- SCROLL_BAR */
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-background-color); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-color); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-hover-color); 
+}
+
+#p1{
+  font-weight: bold;
+  font-family: N27;
+  margin-bottom: 30px;
+  transition: .4s ease;
+  color: var(--text-color);
+}
+
+#p2{
+  font-weight: bold;
+  font-family: N27;
+  margin-bottom: 30px;
+  transition: .4s ease;
+  color: var(--text-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--top-scrollbar-color); 
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--top-scrollbar-hover); 
+}
+
+img {
+    margin-top: -30px;
+    max-width: 100%;
+    height: auto;
+}
+
+.card{
+  border: none;
+  background-color:transparent;
+  margin-bottom: 4em;
+}
+
+.card-title{
+  font-family: N27;
+  font-weight: bold;
+  font-size: 50px;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: var(--title-background);
+}
+
+.card-text{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+  background-color: var(--bg-color);
+	text-align: center;
+  border: 1px solid var(--text-color);
+  box-shadow: 16px 16px 0px var(--light-b);
+  transition: .4s ease-in-out;
+}
+
+input{
+  font-family: N27;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: auto;
+  border: 1px solid black;
+	border-radius: 0px;
+  color: var(--text-color);
+  box-shadow: 6px 6px 0px var(--light-b);
+  transition: .4s ease-in-out;
+}
+input:focus{
+  cursor: pointer;
+  box-shadow: none;
+  transform: translateX(6px) translateY(6px);
+}
+
+.card-text form .input-box input{
+	outline: none;
+	background: var(--input);
+	width: 100%;
+	padding: 10px 15px;
+}
+
+#name{
+  color: var(--text-color);
+  margin-bottom: 0em;
+}
+
+#email{
+  color: var(--text-color);
+}
+
+#message{
+  padding: 10px 15px;
+	outline: none;
+  border: none;
+  border-radius: 0px;
+  font-family: N27;
+  background-color: var(--input);
+  font-weight: bold;
+  color: var(--text-color);
+  border: 1px solid black;
+  box-shadow: 6px 6px 0px var(--light-b);
+  transition: .4s ease-in-out;
+}
+#message:focus{
+  cursor: pointer;
+  box-shadow: none;
+  transform: translateX(6px) translateY(6px);
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.8rem 0.8rem;
+  border-radius: 0px;
+  background-color: limegreen;
+  color: var(--title-background);
+  font-size: 1.1rem;
+  letter-spacing: 0.15rem;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  font-family: N27;
+  font-weight: bold;
+  border: none;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border: 1px solid black;
+  box-shadow: 6px 6px 0px var(--light-b);
+  transition: .4s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid var(--title-background);
+  cursor: pointer;
+  box-shadow: none;
+  transform: translateX(6px) translateY(6px);
+}
+
+/*<!---------------------------------------------------------------------- THEME_SWITCH ---------------------------------------------------------------------->*/
+
+:root {
+  /* Start of dark/light mode css3 variables for website */
+  --bg-color: white;
+  --title-background:black;
+  --text-color:black;
+  --card-background:rgb(255, 255, 255);
+  --text-shadow1:#aaaaaa;
+  --text-shadow2:#cccccc;
+  --text-shadow3:#eeeeee;
+  --card-shadow1:rgba(50, 50, 93, 0.25);
+  --card-shadow2:rgba(0, 0, 0, 0.3);
+  --box-shadow:rgba(0,0,0,0.1);
+  --top-scrollbar-color:black;
+  --top-scrollbar-hover:#454545;
+  --light-b: black;
+  --input:white;
+}
+/* dark mode css variables */
+[data-theme="dark"] {
+  --bg-color: black;
+  --title-background:white;
+  --text-color: white;
+  --card-background:#171717;
+  --text-shadow1:#242424;
+  --text-shadow2:#141414;
+  --text-shadow3:#0f0f0f;
+  --box-shadow:rgb(15, 15, 15);
+  --top-scrollbar-color: #2e2e2e;
+  --top-scrollbar-hover:#5c5a5a;
+  --light-b: rgb(61, 61, 61);
+  --input:#171717;
+}
+
+body {
+    background-color: var(--bg-color);
+  }
+
+/* css to style it like a toggle switch*/
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center; 
+
+ }
+.theme-switch {
+  display: none;
+}
+
+.theme-switch input {
+  display:none;
+}
+.slider {
+  background-color: rgb(0, 0, 0);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: rgb(255, 255, 255);
+  top: 4px;
+  content: "";
+  height: 16px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 16px;
+}
+
+input:checked + .slider {
+  background-color: rgb(255, 0, 0);
+}
+
+input:checked + .slider:before {
+  transform: translateY(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
