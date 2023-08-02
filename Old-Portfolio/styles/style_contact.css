@@ -1,39 +1,10 @@
-/*-- BODY --*/
-
-body {
-  background: var(--title-background);
-  background-image: radial-gradient(var(--title-background) 1px, transparent 0);
-  background-size: 40px 40px;
-}
-
-/*-- FONT --*/
-
-@font-face {
-  font-family: N27;
-  src: url("fonts/N27-Regular.otf");
-}
-
-/* -- SCROLL_BAR */
-
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--scroll-background-color); 
-}
- 
-::-webkit-scrollbar-thumb {
-  background: var(--scroll-color); 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--scroll-hover-color); 
+.i img{
+  content: var(--bg-video);
 }
 
 #p1{
   font-weight: bold;
-  font-family: N27;
+  font-family: Caviar Dreams;
   margin-bottom: 30px;
   transition: .4s ease;
   color: var(--text-color);
@@ -41,7 +12,7 @@ body {
 
 #p2{
   font-weight: bold;
-  font-family: N27;
+  font-family: Caviar Dreams;
   margin-bottom: 30px;
   transition: .4s ease;
   color: var(--text-color);
@@ -49,6 +20,27 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+#myVideo {
+  z-index: -1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+@font-face {
+  font-family: Caviar Dreams;
+  src: url("fonts/caviardreams.ttf");
+}
+         
+@font-face {
+  font-family: Caviar Dreams;
+  src: url("fonts/caviardreams_bold.ttf");
+  font-weight: bold;
 }
 
 ::-webkit-scrollbar {
@@ -69,6 +61,7 @@ body {
 }
 
 img {
+    content:var(--gif);
     margin-top: -30px;
     max-width: 100%;
     height: auto;
@@ -77,16 +70,15 @@ img {
 .card{
   border: none;
   background-color:transparent;
-  margin-bottom: 4em;
 }
 
 .card-title{
-  font-family: N27;
+  font-family: Caviar Dreams;
   font-weight: bold;
   font-size: 50px;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
   color: var(--title-background);
+  transform: skewY(-4deg);
+  text-shadow: var(--text-shadow1) 0.1em 0.1em,var(--text-shadow2) 0.2em 0.2em,var(--text-shadow3) 0.3em 0.3em;
 }
 
 .card-text{
@@ -94,41 +86,38 @@ img {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-  background-color: var(--bg-color);
+  background-color: var(--card-background);
 	text-align: center;
-  border: 1px solid var(--text-color);
-  box-shadow: 16px 16px 0px var(--light-b);
-  transition: .4s ease-in-out;
+  box-shadow: var(--card-shadow1) 0px 2px 5px -1px, var(--card-shadow2) 0px 1px 3px -1px;
+  clip-path: polygon(40px 0%, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%, 0% 40px);
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
 }
 
-input{
-  font-family: N27;
-  font-weight: bold;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  width: auto;
-  border: 1px solid black;
-	border-radius: 0px;
-  color: var(--text-color);
-  box-shadow: 6px 6px 0px var(--light-b);
-  transition: .4s ease-in-out;
+.card-wrap {
+  filter: drop-shadow(-1px 2px 2px rgba(50, 50, 93, 0.25));
 }
-input:focus{
-  cursor: pointer;
-  box-shadow: none;
-  transform: translateX(6px) translateY(6px);
+
+.input-box{
+  font-family: Caviar Dreams;
+  font-weight: bold;
+  margin: 27px;
+  width: auto;
+	box-shadow: inset 2px 5px 10px var(--box-shadow);
+	border-radius: 25px;
+  color: var(--text-color)
 }
 
 .card-text form .input-box input{
+	border: none;
 	outline: none;
-	background: var(--input);
+	background: transparent;
 	width: 100%;
 	padding: 10px 15px;
 }
 
 #name{
-  color: var(--text-color);
-  margin-bottom: 0em;
+  color: var(--text-color); 
 }
 
 #email{
@@ -139,49 +128,60 @@ input:focus{
   padding: 10px 15px;
 	outline: none;
   border: none;
-  border-radius: 0px;
-  font-family: N27;
-  background-color: var(--input);
+  border-radius: 25px;
+  font-family: Caviar Dreams;
   font-weight: bold;
-  color: var(--text-color);
-  border: 1px solid black;
-  box-shadow: 6px 6px 0px var(--light-b);
-  transition: .4s ease-in-out;
-}
-#message:focus{
-  cursor: pointer;
-  box-shadow: none;
-  transform: translateX(6px) translateY(6px);
+  box-shadow: inset 2px 5px 10px var(--box-shadow);
+  background-color: var(--card-background);
+  color: var(--text-color)
 }
 
 .btn-primary {
   display: inline-block;
   padding: 0.8rem 0.8rem;
-  border-radius: 0px;
-  background-color: limegreen;
-  color: var(--title-background);
+  border-radius: 10rem; 
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  font-family: Arial;
   font-size: 1.1rem;
   letter-spacing: 0.15rem;
   text-decoration: none;
+  transition: all 0.3s;
   position: relative;
+  overflow: hidden;
   z-index: 1;
-  font-family: N27;
+  font-family: Caviar Dreams;
   font-weight: bold;
   border: none;
   margin-bottom: 30px;
   margin-top: 30px;
-  border: 1px solid black;
-  box-shadow: 6px 6px 0px var(--light-b);
-  transition: .4s ease-in-out;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: red;
+  z-index: -1;
+  border-radius: 10rem;
+  transition: 0.3s ease all;
+  transform: scale(0, 1);
+  transform-origin: top right;
+  transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1);
+  transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
 }
 
 .btn-primary:hover {
+  color: #ffffff;
   background-color: black;
-  color: white;
-  border: 1px solid var(--title-background);
-  cursor: pointer;
-  box-shadow: none;
-  transform: translateX(6px) translateY(6px);
+}
+
+.btn-primary:hover::after {
+  transform: scale(1, 1);
+  transform-origin: top left;
 }
 
 /*<!---------------------------------------------------------------------- THEME_SWITCH ---------------------------------------------------------------------->*/
@@ -198,10 +198,10 @@ input:focus{
   --card-shadow1:rgba(50, 50, 93, 0.25);
   --card-shadow2:rgba(0, 0, 0, 0.3);
   --box-shadow:rgba(0,0,0,0.1);
+  --bg-video:url(WavyDot_Light.gif);
+  --gif: url(Contact_Light.gif);
   --top-scrollbar-color:black;
   --top-scrollbar-hover:#454545;
-  --light-b: black;
-  --input:white;
 }
 /* dark mode css variables */
 [data-theme="dark"] {
@@ -212,11 +212,13 @@ input:focus{
   --text-shadow1:#242424;
   --text-shadow2:#141414;
   --text-shadow3:#0f0f0f;
+  --card-shadow1:rgba(255, 255, 255, 0.25);
+  --card-shadow2:rgba(255, 255, 255, 0.3);
   --box-shadow:rgb(15, 15, 15);
+  --bg-video:url(WavyDot_Dark.gif);
+  --gif: url(Contact_Dark.gif);
   --top-scrollbar-color: #2e2e2e;
   --top-scrollbar-hover:#5c5a5a;
-  --light-b: rgb(61, 61, 61);
-  --input:#171717;
 }
 
 body {
