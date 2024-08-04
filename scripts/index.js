@@ -545,7 +545,7 @@ let photos = data.map((values) => {
   return `<div class="i">
         <div class="image-container">
             <p class="ih" id="loading">Loading..</p>
-            <img src="${values.src}" alt="Image">
+            <img src="${values.src}" alt="Image" loading="lazy">
             <div class="data_a">
               <div class="info">
                   <div class="tab">
