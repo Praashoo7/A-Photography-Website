@@ -321,8 +321,32 @@ body {
   border: none;
 }
 
+.photographyhood{
+  font-size: 20px;
+  width: 11.5em;
+  margin: 1em;
+  height: 2.5em;
+  padding: 0.5em;
+  color: var(--bg-color-o);
+  background-color: var(--button-bg);
+  border: 1px solid black;
+  transition: .4s;
+  fill: var(--icon-color);
+  box-shadow: 6px 6px 0px var(--light-b);
+}
+.photographyhood:hover{
+  fill: var(--bg-color);
+  color: var(--bg-color);
+  cursor: pointer;
+  box-shadow: none;
+  transform: translateX(6px) translateY(6px);
+  background-color: var(--bg-color-o);
+  border: none;
+}
+
 svg{
   margin-left: 0.5em;
+  margin-bottom: 0.2em;
 }
 
 /* -- SCROLL_DOWN -- */
@@ -435,18 +459,79 @@ svg{
 }
 
 .image-container {
+  position: relative;
   width: 60em; /* Adjust the width and height as per your requirements */
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all .4s ease-in-out;
 }
+.image-container::after{
+  content: "";
+  position: absolute;
+  bottom: 5.5em;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+  background: linear-gradient(110deg, #d6d6d6 8%, #f5f5f5 18%, #d6d6d6 33%);
+  background-size: 200% 400%;
+  -webkit-animation: 4.5s shine linear infinite;
+          animation: 4.5s shine linear infinite;
+  transition: all .4s ease-in-out;
+}
+.image-container.loaded::after {
+  opacity: 0;
+}
+@-webkit-keyframes shine {
+  to {
+    background-position-x: -800%;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -800%;
+  }
+}
+
 .image-container_p {
+  position: relative;
   width: 30em; /* Adjust the width and height as per your requirements */
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all .4s ease-in-out;
+}
+.image-container_p::after{
+  content: "";
+  position: absolute;
+  bottom: 5.5em;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+  background: linear-gradient(110deg, #d6d6d6 8%, #f5f5f5 18%, #d6d6d6 33%);
+  background-size: 200% 400%;
+  -webkit-animation: 4.5s shine linear infinite;
+          animation: 4.5s shine linear infinite;
+  transition: all .4s ease-in-out;
+}
+.image-container_p.loaded::after {
+  opacity: 0;
+}
+@-webkit-keyframes shine {
+  to {
+    background-position-x: -800%;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -800%;
+  }
 }
 
 .image-container img {
@@ -466,14 +551,17 @@ svg{
   transition: .4s ease-in-out;
 }
 
-.image-container img:hover {
+.image-container:hover, .image-container_p:hover{
+  cursor: pointer;
+}
+.image-container:hover img {
   cursor: pointer;
   box-shadow: none;
   transform: translateX(16px) translateY(16px);
   background-color: var(--bg-color-o);
 }
 
-.image-container_p img:hover {
+.image-container_p:hover img {
   cursor: pointer;
   box-shadow: none;
   transform: translateX(16px) translateY(16px);

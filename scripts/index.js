@@ -164,13 +164,11 @@ const data = [
 
 
 let photos = data.map((values) => {
-
   const containerClass = values.isTall ? "image-container_p" : "image-container";
 
   return `<div class="i">
-        <div class="${containerClass}">
-            <p class="ih" id="loading">Loading..</p>
-            <img src="${values.src}" alt="Image" loading="lazy">
+        <div class="${containerClass}" id="container${values.id}">
+            <img id="loadIMG${values.id}" class="loadIMG" src="${values.src}" alt="Image" loading="lazy">
             <div class="data_a">
               <div class="info">
                   <div class="tab">
@@ -191,10 +189,19 @@ let photos = data.map((values) => {
               </a>
               </div>
         </div>
-    </div>`
-})
+    </div>`;
+});
 
 document.getElementById("photos").innerHTML = photos.join("");
+
+document.querySelectorAll('.loadIMG').forEach(img => {
+  img.addEventListener('load', function() {
+    const containerId = this.id.replace('loadIMG', 'container');
+    const container = document.getElementById(containerId);
+    container.classList.add('loaded');
+  });
+});
+
 
 
 /*<!---------------------------------------------------------------------- MAIL-TO ---------------------------------------------------------------------->*/
