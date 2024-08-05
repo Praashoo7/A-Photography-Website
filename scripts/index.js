@@ -199,6 +199,9 @@ document.querySelectorAll('.loadIMG').forEach(img => {
     const containerId = this.id.replace('loadIMG', 'container');
     const container = document.getElementById(containerId);
     container.classList.add('loaded');
+    setTimeout(() => {
+      container.classList.add('hide-after');
+    }, 400);
   });
 });
 

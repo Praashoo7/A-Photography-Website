@@ -468,6 +468,7 @@ svg{
   transition: all .4s ease-in-out;
 }
 .image-container::after{
+  display: block;
   content: "";
   position: absolute;
   bottom: 5.5em;
@@ -483,6 +484,9 @@ svg{
 }
 .image-container.loaded::after {
   opacity: 0;
+}
+.image-container.hide-after::after {
+  display: none;
 }
 @-webkit-keyframes shine {
   to {
@@ -506,6 +510,7 @@ svg{
   transition: all .4s ease-in-out;
 }
 .image-container_p::after{
+  display: block;
   content: "";
   position: absolute;
   bottom: 5.5em;
