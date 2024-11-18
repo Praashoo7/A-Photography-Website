@@ -1,4 +1,4 @@
-/*---------------------------------------------------------------------- THEME_SWITCH_START ----------------------------------------------------------------------*/
+/*--------------------------- THEME_SWITCH_START ---------------------------*/
 
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
@@ -12,17 +12,16 @@ function switchTheme(e) {
 }
 
 toggleSwitch.addEventListener('change', switchTheme, false);
-// store user preference for future visits
 function switchTheme(e) {
   if (e.target.checked) {
       document.documentElement.setAttribute('data-theme', 'dark');
       document.getElementById("namee").innerHTML="Light Mode";
-      localStorage.setItem('theme', 'dark'); //add this
+      localStorage.setItem('theme', 'dark');
   }
   else {
       document.documentElement.setAttribute('data-theme', 'light');
       document.getElementById("namee").innerHTML="Dark Mode";
-      localStorage.setItem('theme', 'light'); //add this
+      localStorage.setItem('theme', 'light');
   }    
 }
 const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
@@ -39,7 +38,7 @@ if (currentTheme) {
     }
 }
 
-/*---------------------------------------------------------------------- TEXT_SHADOW_CURSOR ----------------------------------------------------------------------*/
+/*---------------------------- TEXT_SHADOW_CURSOR ----------------------------*/
 
 const p = document.querySelector('span');
 
@@ -54,17 +53,17 @@ const MAX_SHADOW_OFFSET = 30;
 
 const paint = (x, y) => {
   const r = p.getBoundingClientRect();
-  const o = Math.min(r.width, r.height, MAX_SHADOW_OFFSET); // compute max shadow offset
+  const o = Math.min(r.width, r.height, MAX_SHADOW_OFFSET);
   
-  const mx = clamp(x, r.left - o, r.right + o); // clamp mouse coordinates within the shadow projection bounding box.
+  const mx = clamp(x, r.left - o, r.right + o);
   const my = clamp(y, r.top - o, r.bottom + o);
-  const px = r.right - r.width / 2; // compute element bb midpoints.
+  const px = r.right - r.width / 2;
   const py = r.bottom - r.height / 2;
-  const nx = (mx - px) / (r.right - r.left + 2 * o); // project mouse position relative to the bounding box to [-.5, .5];
+  const nx = (mx - px) / (r.right - r.left + 2 * o);
   const ny = (my - py) / (r.bottom - r.top + 2 * o); 
   
   requestAnimationFrame(() => {
-    p.style.textShadow = `${-1 * nx * o}px ${-1 * ny * o}px hsl(210, 1%, 62%)`;
+    p.style.textShadow = `${-1 * nx * o}px ${-1 * ny * o}px var(--heading-shadow-color)`;
   });
 };
 
@@ -72,7 +71,7 @@ document.addEventListener('mousemove', (e) => paint(e.clientX, e.clientY), {
   passive: true
 });
 
-/*---------------------------------------------------------------------- SCROLL_TO_TOP ----------------------------------------------------------------------*/
+/*------------------------------- SCROLL_TO_TOP -------------------------------*/
 
 window.addEventListener('scroll', e => {
   var el = document.getElementById('jsScroll');
@@ -90,7 +89,7 @@ function scrollToTop() {
   });
 }
 
-// /*---------------------------------------------------------------------- INTERNET_LOAD ----------------------------------------------------------------------*/
+// /*----------------------------- INTERNET_LOAD -----------------------------*/
 
 // function load(){
 
@@ -162,6 +161,46 @@ const data = [
   {"id": 54, isTall: false ,src: "https://drive.google.com/thumbnail?id=1fdUi1YG1uwnOx425aEf536e4I6Cx8xOt&sz=w1000", shot_on: "Mi A2", location: "Ankleshwar", date: "5 June 2019", lens: "NORMAL"}
 ];
 
+{/* <div class="i">
+        <div class="${containerClass}" id="container${values.id}">
+            <img id="loadIMG${values.id}" class="loadIMG" src="${values.src}" alt="Image" loading="lazy">
+            <div class="data_a">
+            <label class="checkBoxcontainer">
+              <input type="checkbox" data-image-id="image${values.id || 'default'}">
+              <div class="checkmark">
+                <svg class="heart" width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 9.1371C2 14 6.01943 16.5914 8.96173 18.9109C10 19.7294 11 20.5 12 20.5C13 20.5 14 19.7294 15.0383 18.9109C17.9806 16.5914 22 14 22 9.1371C22 4.27416 16.4998 0.825464 12 5.50063C7.50016 0.825464 2 4.27416 2 9.1371Z" fill="#FFFFFF"/>
+                </svg>
+                <svg viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" class="icon">
+                <path d="M 24.10 6.29 Q 28.34 7.56 28.00 12.00 Q 27.56 15.10 27.13 18.19 A 0.45 0.45 4.5 0 0 27.57 18.70 Q 33.16 18.79 38.75 18.75 Q 42.13 18.97 43.23 21.45 Q 43.91 22.98 43.27 26.05 Q 40.33 40.08 40.19 40.44 Q 38.85 43.75 35.50 43.75 Q 21.75 43.75 7.29 43.75 A 1.03 1.02 0.0 0 1 6.26 42.73 L 6.42 19.43 A 0.54 0.51 -89.4 0 1 6.93 18.90 L 14.74 18.79 A 2.52 2.31 11.6 0 0 16.91 17.49 L 22.04 7.17 A 1.74 1.73 21.6 0 1 24.10 6.29 Z M 21.92 14.42 Q 20.76 16.58 19.74 18.79 Q 18.74 20.93 18.72 23.43 Q 18.65 31.75 18.92 40.06 A 0.52 0.52 88.9 0 0 19.44 40.56 L 35.51 40.50 A 1.87 1.83 5.9 0 0 37.33 39.05 L 40.51 23.94 Q 40.92 22.03 38.96 21.97 L 23.95 21.57 A 0.49 0.47 2.8 0 1 23.47 21.06 Q 23.76 17.64 25.00 12.00 Q 25.58 9.36 24.28 10.12 Q 23.80 10.40 23.50 11.09 Q 22.79 12.80 21.92 14.42 Z M 15.57 22.41 A 0.62 0.62 0 0 0 14.95 21.79 L 10.01 21.79 A 0.62 0.62 0 0 0 9.39 22.41 L 9.39 40.07 A 0.62 0.62 0 0 0 10.01 40.69 L 14.95 40.69 A 0.62 0.62 0 0 0 15.57 40.07 L 15.57 22.41 Z" fill-opacity="1.000"></path>
+                <circle r="1.51" cy="37.50" cx="12.49" fill-opacity="1.000"></circle>
+                </svg>
+              </div>
+              <p class="likeCount" data-image-id="image${values.id || 'default'}">0</p>
+            </label>
+            <div class="infoDownWrap">
+              <div class="info">
+                  <div class="tab">
+                      <input type="checkbox" id="chck${values.id}">
+                      <label class="tab-label" for="chck${values.id}">Info</label>
+                      <div class="tab-content">
+                      Shot On : ${values.shot_on}<br>
+                      <!-- Location : ${values.location}<br> -->
+                      Date : ${values.date}<br>
+                      Lens : ${values.lens}
+                      </div>
+                  </div>
+              </div>
+              <a href="${values.src}" download="PhotographyHOOD-${values.id}" onclick="updateDownloadCount('image${values.id}'); return true;">
+              <div class="download">
+                  <i class="bi bi-download" style="margin-left: 0.25em;"></i>
+                  <span class="downloadCount" data-image-id="image${values.id}"></span>
+              </div>
+              </a>
+              </div>
+              </div>
+        </div>
+    </div> */}
 
 let photos = data.map((values) => {
   const containerClass = values.isTall ? "image-container_p" : "image-container";
@@ -170,23 +209,26 @@ let photos = data.map((values) => {
         <div class="${containerClass}" id="container${values.id}">
             <img id="loadIMG${values.id}" class="loadIMG" src="${values.src}" alt="Image" loading="lazy">
             <div class="data_a">
+            <div class="infoDownWrap">
               <div class="info">
                   <div class="tab">
                       <input type="checkbox" id="chck${values.id}">
                       <label class="tab-label" for="chck${values.id}">Info</label>
                       <div class="tab-content">
                       Shot On : ${values.shot_on}<br>
-                      Location : ${values.location}<br>
+                      <!-- Location : ${values.location}<br> -->
                       Date : ${values.date}<br>
                       Lens : ${values.lens}
                       </div>
                   </div>
               </div>
-              <a href="${values.src}" download="PhotographyHOOD-${values.id}">
+              <a href="${values.src}" download="PhotographyHOOD-${values.id}" onclick="updateDownloadCount('image${values.id}'); return true;">
               <div class="download">
                   <i class="bi bi-download" style="margin-left: 0.25em;"></i>
+                  <span class="downloadCount" data-image-id="image${values.id}"></span>
               </div>
               </a>
+              </div>
               </div>
         </div>
     </div>`;
@@ -206,11 +248,168 @@ document.querySelectorAll('.loadIMG').forEach(img => {
 });
 
 
-
-/*<!---------------------------------------------------------------------- MAIL-TO ---------------------------------------------------------------------->*/
+/*<!-------------------------------- MAIL-TO -------------------------------->*/
 
 
 function mailDefault(){
   var email = "meprashant00@gmail.com";
   window.open(`mailto:${email}`);
 }
+
+
+/*<!------------------------------ CURRENT-YEAR ------------------------------>*/
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const currentYear = new Date().getFullYear();
+  document.getElementById("year-c").textContent = new Date().getFullYear();
+});
+
+
+
+/*<!------------------------- LIKE-COUNTER-FIREBASE ------------------------->*/
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const likeCheckboxes = document.querySelectorAll('input[type="checkbox"][data-image-id]');
+//   const likeCounts = document.querySelectorAll('.likeCount[data-image-id]');
+
+//   likeCounts.forEach(counter => {
+//     const imageId = counter.dataset.imageId;
+//     if (!imageId) {
+//       console.error('Like counter is missing data-image-id attribute:', counter);
+//       return;
+//     }
+//     const countRef = firebase.database().ref('likeCounts/' + imageId);
+
+//     countRef.on('value', (snapshot) => {
+//       counter.textContent = snapshot.val() || 0;
+//     }, (error) => {
+//       console.error('Error fetching like count:', error);
+//     });
+//   });
+
+//   likeCheckboxes.forEach(checkbox => {
+//     const imageId = checkbox.dataset.imageId;
+//     if (!imageId) {
+//       console.error('Like checkbox is missing data-image-id attribute:', checkbox);
+//       return;
+//     }
+
+//     const countRef = firebase.database().ref('likeCounts/' + imageId);
+//     const likedRef = firebase.database().ref('userLikes/' + imageId);
+
+//     likedRef.once('value', (snapshot) => {
+//       checkbox.checked = snapshot.val() === true;
+//     }, (error) => {
+//       console.error('Error fetching user like status:', error);
+//     });
+
+//     checkbox.addEventListener('change', () => {
+//       countRef.transaction((currentCount) => {
+//         if (checkbox.checked) {
+//           likedRef.set(true);
+//           return (currentCount || 0) + 1;
+//         } else {
+//           likedRef.set(false);
+//           return Math.max((currentCount || 0) - 1, 0);
+//         }
+//       }, (error, committed, snapshot) => {
+//         if (error) {
+//           console.error('Error updating like count:', error);
+//         } else if (!committed) {
+//           console.warn('Like count update not committed');
+//         }
+//       });
+//     });
+//   });
+
+// });
+
+
+
+// /*<!----------------------- DOWNLOAD-COUNTER-FIREBASE ----------------------->*/
+
+// function updateDownloadCount(imageId) {
+//   const db = firebase.database();
+//   const downloadRef = db.ref('downloads/' + imageId);
+
+//   downloadRef.transaction((currentCount) => {
+//     return (currentCount || 0) + 1;
+//   }).then(() => {
+//     // Update the UI
+//     const countElement = document.querySelector(`[data-image-id="${imageId}"]`);
+//     if (countElement) {
+//       countElement.textContent = parseInt(countElement.textContent) + 1;
+//     }
+//   }).catch((error) => {
+//     console.error("Error updating download count:", error);
+//   });
+// }
+
+// function initializeDownloadCounts() {
+//   const db = firebase.database();
+//   const downloadCountElements = document.querySelectorAll('.downloadCount');
+
+//   downloadCountElements.forEach((element) => {
+//     const imageId = element.getAttribute('data-image-id');
+//     const downloadRef = db.ref('downloads/' + imageId);
+
+//     downloadRef.once('value').then((snapshot) => {
+//       const count = snapshot.val() || 0;
+//       element.textContent = count;
+//     }).catch((error) => {
+//       console.error("Error fetching download count:", error);
+//     });
+//   });
+// }
+
+// document.addEventListener('DOMContentLoaded', initializeDownloadCounts);
+
+
+
+/*<!------------------------- MOUSE-DISAPPEAR ------------------------->*/
+
+window.onscroll = function(e) {
+  document.getElementById('mouse').style.opacity = 0;
+  if(window.scrollY === 0){
+    document.getElementById('mouse').style.opacity = 1;
+  }
+}
+
+
+
+
+
+
+
+{/* <a href="#" onclick="downloadGoogleDriveImage('${values.src}', 'PhotographyHOOD-${values.id}'); updateDownloadCount('image${values.id}'); return false;">
+  <div class="download">
+    <i class="bi bi-download" style="margin-left: 0.25em;"></i>
+    <span class="downloadCount" data-image-id="image${values.id}"></span>
+  </div>
+</a>
+
+
+function downloadGoogleDriveImage(url, fileName) {
+  // Extract the file ID from the Google Drive URL
+  console.log(fileName)
+  const fileId = url.match(/id=([^&]+)/)[1];
+  
+  // Construct the direct download link
+  const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
+  
+  // Create a temporary anchor element
+  const a = document.createElement('a');
+  a.style.display = 'none';
+  a.href = downloadUrl;
+  a.download = fileName;  // Set the desired filename
+  
+  // Append to the body and trigger the download
+  document.body.appendChild(a);
+  a.click();
+  
+  // Clean up
+  setTimeout(() => {
+    document.body.removeChild(a);
+  }, 100);
+} */}

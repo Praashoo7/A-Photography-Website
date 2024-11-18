@@ -13,6 +13,10 @@
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFBWY0KHMW"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script> -->
+
+
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -20,6 +24,23 @@ gtag('js', new Date());
 
 gtag('config', 'G-JFBWY0KHMW');
 </script>
+
+<!-- <script>
+
+    const firebaseConfig = {
+      apiKey: "",
+      authDomain: "",
+      projectId: "",
+      storageBucket: "",
+      messagingSenderId: "",
+      appId: "",
+      measurementId: ""
+    };
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+    </script> -->
 
 <body>
     
@@ -50,6 +71,8 @@ gtag('config', 'G-JFBWY0KHMW');
             </div>
         </a>
 
+        <!-- <div class="mouse" id="mouse"></div> -->
+
     </div>
 
     <!--<a href="#main">
@@ -66,6 +89,14 @@ gtag('config', 'G-JFBWY0KHMW');
     <!--AUTO_CODE_HERE-->
 
     <!-- SCROLL_TO_TOP -->
+
+    <footer>
+
+        <img class="fp" style="width: 46px; height: 46px; border-radius: 50%;" id="mepimg" src="icons/prof_p_r.png" alt="@ME">
+        <p class="copyright">Copyright © <span id="year-c"></span> photographyhood</p>
+        <p class="design">Shot & Created by <span class="namet">Prashant</span></p>
+
+    </footer>
     
     <div id="jsScroll" class="scroll" onclick="scrollToTop();">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-up" viewBox="0 4 16 16" style="margin: 0em;">
