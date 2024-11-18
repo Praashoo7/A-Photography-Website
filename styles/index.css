@@ -99,7 +99,7 @@ body {
   .blockquote{
     position: relative;
     font-family: N27;
-    margin-top: 13em;
+    margin-top: 14em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -997,6 +997,7 @@ footer:hover{
   font-family: N27;
   font-size: 1.5em;
   transform: rotate(90deg);
+  color: var(--heading-color);
 }
 .arrow:nth-child(2), .arrow:nth-child(3){
   margin-top: -2.25em;
